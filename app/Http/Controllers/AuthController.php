@@ -74,4 +74,36 @@ class AuthController extends Controller
 
     }
 
+    public function ShowTeacher(){
+        return User::where('user_type','teacher')->get();
+    } 
+
+    public function ShowStudent(){
+        return User::where('user_type','student')->get();
+    } 
+
+    public function UserCount(){
+        
+        $Tcount = User::where('user_type','teacher')->count();
+        $Scount = User::where('user_type','student')->count();
+
+        return response([
+            'Tcount' => $Tcount,
+            'Scount' => $Scount,
+        ]);
+    } 
+
+    public function EditTeacher(Request $request, $id){
+
+        $user = User::find($id);
+        $user->update($request->all());
+        return  $user;
+    } 
+    
+    public function DestroyTeacher($id){
+
+        return User::destroy($id);
+
+    } 
+
 }

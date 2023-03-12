@@ -40,3 +40,7 @@ Route::post('/CreateActivity', [ActivityController::class, 'CreateActivity']);
 Route::put('/EditActivity/{id}', [ActivityController::class, 'EditActivity']);
 Route::get('/ShowActivity', [ActivityController::class, 'ShowActivity']);
 Route::post('/DestroyActivity/{id}', [ActivityController::class, 'DestroyActivity']);
+Route::post('/SubmitActivity', [ActivityController::class, 'SubmitActivity']);
+Route::get('/StudentAnswer/{id}', [ActivityController::class, 'StudentAnswer']);
+Route::put('/ScoreActivity/{id}', [ActivityController::class, 'ScoreActivity']);
+Route::get('/ViewAnswer', [ActivityController::class, 'ViewAnswer']);

@@ -13,15 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('activity', function (Blueprint $table) {
+        Schema::create('score', function (Blueprint $table) {
             $table->id();
+            $table->string('student_id');
+            $table->string('activity_id')->nullable();
+            $table->string('name');
             $table->string('activity')->nullable();
             $table->string('detail')->nullable();
             $table->string('output')->nullable();
+            $table->string('points')->nullable();
             $table->string('score')->nullable();
+            $table->string('answer')->nullable();
             $table->string('teacher_id')->nullable();
             $table->string('grade')->nullable();
-            $table->string('section')->nullable();
+            $table->string('section')->nullable();;
             $table->timestamps();
         });
     }
@@ -33,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activity');
+        Schema::dropIfExists('score');
     }
 };

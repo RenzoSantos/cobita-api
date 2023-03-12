@@ -16,6 +16,7 @@ class activity extends Model
         'detail',
         'output',
         'score',
+        'points',
         'teacher_id',
         'grade',
         'section',

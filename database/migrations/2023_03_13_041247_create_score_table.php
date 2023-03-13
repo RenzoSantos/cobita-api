@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('score', function (Blueprint $table) {
             $table->id();
-            $table->string('student_id');
+            $table->string('student_id')->nullable();
             $table->string('activity_id')->nullable();
             $table->string('name');
             $table->string('activity')->nullable();

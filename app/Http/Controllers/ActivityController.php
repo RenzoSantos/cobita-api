@@ -48,8 +48,11 @@ class ActivityController extends Controller
 
     }
 
-    public function ShowActivity(){
-        
+    public function ShowActivity($id){       
+        return  activity::where('teacher_id', $id)->get();
+    }
+
+    public function ShowAllActivity(){       
         return  activity::all();
     }
 
@@ -102,9 +105,9 @@ class ActivityController extends Controller
         
     }
 
-    public function ViewAnswer(){
+    public function ViewAnswer($id){
     
-        return  Score::all();
+        return  Score::where('student_id',$id)->get();
         
     }
 

@@ -35,12 +35,18 @@ Route::put('/EditAnnouncement/{id}', [AnnouncementController::class, 'EditAnnoun
 Route::get('/ShowAnnouncement', [AnnouncementController::class, 'ShowAnnouncement']);
 Route::post('/DestroyAnnouncement/{id}', [AnnouncementController::class, 'DestroyAnnouncement']);
 
+//Techer Announcement
+Route::post('/CreateTeacherPost', [AnnouncementController::class, 'CreateTeacherPost']);
+Route::get('/TeacherAnnouncement/{id}', [AnnouncementController::class, 'TeacherAnnouncement']);
+Route::put('/EditTeacherPost/{id}', [AnnouncementController::class, 'EditTeacherPost']);
+
 //Activity
 Route::post('/CreateActivity', [ActivityController::class, 'CreateActivity']);
 Route::put('/EditActivity/{id}', [ActivityController::class, 'EditActivity']);
-Route::get('/ShowActivity', [ActivityController::class, 'ShowActivity']);
+Route::get('/ShowActivity/{id}', [ActivityController::class, 'ShowActivity']);
 Route::post('/DestroyActivity/{id}', [ActivityController::class, 'DestroyActivity']);
 Route::post('/SubmitActivity', [ActivityController::class, 'SubmitActivity']);
 Route::get('/StudentAnswer/{id}', [ActivityController::class, 'StudentAnswer']);
 Route::put('/ScoreActivity/{id}', [ActivityController::class, 'ScoreActivity']);
-Route::get('/ViewAnswer', [ActivityController::class, 'ViewAnswer']);
+Route::get('/ShowAllActivity', [ActivityController::class, 'ShowAllActivity']);
+Route::get('/ViewAnswer/{id}', [ActivityController::class, 'ViewAnswer']);
